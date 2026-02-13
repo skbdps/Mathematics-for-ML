@@ -1,0 +1,7 @@
+name = "Mathink"
+license = "MIT"
+description = "A clean academic theme for math-heavy blogs"
+min_version = "0.100.0"
+
+[author]
+  name = "Kumar Priyansh"

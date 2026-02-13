@@ -1,0 +1,44 @@
+{{ define "main" }}
+<article>
+  <header class="post-header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.subtitle }}<p class="post-subtitle">{{ . }}</p>{{ end }}
+    <div class="post-meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      <span>·</span>
+      <span class="reading-time">{{ math.Round (div (countwords .Content) 200.0) }} min read</span>
+    </div>
+    {{ with .Params.tags }}
+    <div class="post-tags">
+      {{ range . }}<a href="{{ "tags/" | relURL }}{{ . | urlize }}" class="tag">{{ . }}</a>{{ end }}
+    </div>
+    {{ end }}
+  </header>
+
+  {{/* Series navigation */}}
+  {{ with .Params.series }}
+  {{ $seriesName := index . 0 }}
+  {{ $allInSeries := where $.Site.RegularPages "Params.series" "intersect" (slice $seriesName) }}
+  {{ if gt (len $allInSeries) 1 }}
+  <div class="series-nav">
+    <div class="series-nav-title">Series: {{ $seriesName }}</div>
+    <ol>
+      {{ range $allInSeries }}
+      <li{{ if eq $.RelPermalink .RelPermalink }} class="current"{{ end }}>
+        {{ if eq $.RelPermalink .RelPermalink }}
+          {{ .Title }}
+        {{ else }}
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        {{ end }}
+      </li>
+      {{ end }}
+    </ol>
+  </div>
+  {{ end }}
+  {{ end }}
+
+  <div class="post-body">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}

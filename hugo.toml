@@ -1,0 +1,28 @@
+baseURL = "https://skbdps.github.io/Mathematics-for-ML/"
+languageCode = "en-us"
+title = "Suryansh Kumar — Notes on Math & ML"
+theme = "mathink"
+
+[params]
+  author = "Suryansh Kumar"
+  description = "Building mathematical intuition for machine learning. Not rigour for its own sake, but the foundations necessary to understand what our code is actually doing. Bridging the gap between theory and implementation, one concept at a time."
+  katex = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['$$', '$$'], ['\[', '\]']]
+          inline = [['$', '$'], ['\(', '\)']]
+  [markup.highlight]
+    style = "dracula"
+    lineNos = false
+    guessSyntax = true
+
+[taxonomies]
+  tag = "tags"
+  series = "series"
