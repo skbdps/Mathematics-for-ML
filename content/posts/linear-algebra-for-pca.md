@@ -10,6 +10,7 @@ draft: false
 # Essential Linear Algebra for PCA
 
 *This blog assumes that you have a basic knowledge of the coordinate system and their matrix representation and transformation matrix.*
+
 *From change of basis to Singular Value Decomposition — the minimal theory you actually need to understand Principal Component Analysis.*
 
 ---
@@ -38,7 +39,7 @@ Why would we want to do that? The short answer: it can make our calculations *mu
 
 ### An Intuitive Example
 
-Think about what $b_1$ and $b_2$ mean. They are the $[1, 0]$ and $[0, 1]$ of the new basis. Just like $e_1$ and $e_2$ are the "unit rulers" in the standard world, $b_1$ and $b_2$ are the "unit rulers" in the new world. I have used the work unit ruler for understanding, not necessarily unit vectors in standard Euclidean metric.
+Think about what $b_1$ and $b_2$ mean. They are the $[1, 0]$ and $[0, 1]$ of the new basis. Just like $e_1$ and $e_2$ are the "unit rulers" in the standard world, $b_1$ and $b_2$ are the "unit rulers" in the new world. I have used the word unit ruler for understanding, not necessarily unit vectors in standard Euclidean metric.
 
 Now take a random point $[6, 2]^T$ in our original (standard) basis. That point is just $6 e_1 + 2 e_2$. But we can also express it using $b_1$ and $b_2$:
 
@@ -73,7 +74,7 @@ $$
 You can verify: $C^{-1} [6, 2]^T = [4, 2]^T$, exactly what we worked out by hand.
 
 One quick note - If you are feel like the change of basis matrix is just like any other transformation. You would be correct from a purely numerical POV. But, as I have explained what is actually
-does, you have to think about the difference in their application. One transforms a single vector, another changes how we describe that measure/represent in our space.
+does, you have to think about the difference in their application. One transforms a single vector, another changes how we measure/represent any vector in our space. Please note, the space is still the same, we have just changed our basis.
 
 ### Transformations in a New Basis
 
