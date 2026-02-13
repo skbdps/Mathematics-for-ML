@@ -15,7 +15,7 @@ draft: false
 
 ## 1  Why Calculus?
 
-In the [last post](/blog/linear-algebra-for-pca), we built up linear algebra from change of basis all the way to PCA. We learnt how to manipulate vectors using linear transformations: rotate them, scale them, reflect them, shear them.
+In the [last post](/Mathematics-for-ML/posts/linear-algebra-for-pca), we built up linear algebra from change of basis all the way to PCA. We learnt how to manipulate vectors using linear transformations: rotate them, scale them, reflect them, shear them.
 
 But here is the problem: no matter how many linear transformations we stack, we can never *curve* or *bend* a vector's path. Linear transformations are, well, linear. A straight line goes in, a straight line comes out. Always.
 
